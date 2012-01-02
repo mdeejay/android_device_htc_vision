@@ -39,20 +39,22 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 ARCH_ARM_HAVE_NEON := true
+ARCH_ARM_HAVE_VFP := true
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
-BOARD_HOSTAPD_DRIVER             := WEXT
-BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_wext
 BOARD_WLAN_DEVICE                := bcm4329
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcm4329/parameters/firmware_path"
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_STA_PATH          := "/vendor/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_AP_PATH           := "/vendor/firmware/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4329.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4329_apsta.bin"
 WIFI_DRIVER_MODULE_NAME          := "bcm4329"
+WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration iface_name=wlan"
+BOARD_WLAN_DEVICE_REV            := bcm4329
+WIFI_BAND                        := 802_11_ABG
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -62,6 +64,8 @@ BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88
 BOARD_KERNEL_BASE := 0x4000000
 BOARD_KERNEL_PAGE_SIZE := 4096
 
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
+
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_ADRENO_200 := true
 USE_OPENGL_RENDERER := true
@@ -70,16 +74,10 @@ TARGET_USES_C2D_COMPOSITION := false
 TARGET_USES_SF_BYPASS := false
 TARGET_HAVE_BYPASS := false
 TARGET_QCOM_HDMI_OUT := false
-TARGET_USES_OVERLAY := false
-TARGET_GRALLOC_USES_ASHMEM := true
+TARGET_USES_OVERLAY := true
+TARGET_GRALLOC_USES_ASHMEM := false
 
 ENABLE_WTF_USE_ACCELERATED_COMPOSITING := true
-
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
-COMMON_GLOBAL_CFLAGS += -DUSE_GENLOCK
-
-BOARD_OVERLAY_FORMAT_YCbCr_420_SP := false
 
 BOARD_EGL_CFG := device/htc/vision/egl.cfg
 

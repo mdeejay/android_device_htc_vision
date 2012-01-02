@@ -21,6 +21,7 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/init:root/init \
     device/htc/vision/init.vision.rc:root/init.vision.rc \
     device/htc/vision/init.rc:root/init.rc \
+    device/htc/vision/ueventd.rc:root/ueventd.rc \
     device/htc/vision/ueventd.vision.rc:root/ueventd.vision.rc
 
 
@@ -41,7 +42,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1 \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y \
-    persist.sys.usb.config=adb,mass_storage
+    persist.sys.usb.config=adb,mass_storage \
+    sys.media.vdec.sw=1
 
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -302,6 +304,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/vision/proprietary/akmd:/system/bin/akmd \
     device/htc/vision/proprietary/bma150_usr:/system/bin/bma150_usr \
+    device/htc/vision/proprietary/bootcomplete:/system/bin/bootcomplete \
     device/htc/vision/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \
     device/htc/vision/proprietary/logcat2:/system/bin/logcat2 \
     device/htc/vision/proprietary/rmt_storage:/system/bin/rmt_storage \
