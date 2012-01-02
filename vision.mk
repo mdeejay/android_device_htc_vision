@@ -227,38 +227,6 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/dsp/soundimage/Sound_Treble_Booster.txt:system/etc/soundimage/Sound_Treble_Booster.txt \
     device/htc/vision/dsp/soundimage/Sound_Vocal_Booster.txt:system/etc/soundimage/Sound_Vocal_Booster.txt
 
-# Additional NAM Audio DSP Profiles to NAM Package
-PRODUCT_COPY_FILES += \
-    device/htc/vision/nam/AIC3254_REG_DualMic_MCLK.csv:system/etc/nam/AIC3254_REG_DualMic_MCLK.csv \
-    device/htc/vision/nam/CodecDSPID_MCLK.txt:system/etc/nam/CodecDSPID_MCLK.txt \
-    device/htc/vision/nam/Sound_Treble_Booster_MCLK.txt:system/etc/nam/Sound_Treble_Booster_MCLK.txt \
-    device/htc/vision/nam/Sound_Vocal_Booster_MCLK.txt:system/etc/nam/Sound_Vocal_Booster_MCLK.txt \
-    device/htc/vision/nam/Sound_SRS_A_SPK_MCLK.txt:system/etc/nam/Sound_SRS_A_SPK_MCLK.txt \
-    device/htc/vision/nam/Sound_SRS_V_HP_MCLK.txt:system/etc/nam/Sound_SRS_V_HP_MCLK.txt \
-    device/htc/vision/nam/Sound_SRS_V_SPK_MCLK.txt:system/etc/nam/Sound_SRS_V_SPK_MCLK.txt \
-    device/htc/vision/nam/Sound_Jazz_MCLK.txt:system/etc/nam/Sound_Jazz_MCLK.txt \
-    device/htc/vision/nam/Sound_Latin_MCLK.txt:system/etc/nam/Sound_Latin_MCLK.txt \
-    device/htc/vision/nam/Sound_New_Age_MCLK.txt:system/etc/nam/Sound_New_Age_MCLK.txt \
-    device/htc/vision/nam/Sound_Original_MCLK.txt:system/etc/nam/Sound_Original_MCLK.txt \
-    device/htc/vision/nam/Sound_Piano_MCLK.txt:system/etc/nam/Sound_Piano_MCLK.txt \
-    device/htc/vision/nam/Sound_Pop_MCLK.txt:system/etc/nam/Sound_Pop_MCLK.txt \
-    device/htc/vision/nam/Sound_R_B_MCLK.txt:system/etc/nam/Sound_R_B_MCLK.txt \
-    device/htc/vision/nam/Sound_Rock_MCLK.txt:system/etc/nam/Sound_Rock_MCLK.txt \
-    device/htc/vision/nam/Sound_SRS_A_HP_MCLK.txt:system/etc/nam/Sound_SRS_A_HP_MCLK.txt \
-    device/htc/vision/nam/Sound_Dualmic_SPK_MCLK.txt:system/etc/nam/Sound_Dualmic_SPK_MCLK.txt \
-    device/htc/vision/nam/Sound_Dualmic_EP_MCLK.txt:system/etc/nam/Sound_Dualmic_EP_MCLK.txt \
-    device/htc/vision/nam/Sound_Dualmic_MCLK.txt:system/etc/nam/Sound_Dualmic_MCLK.txt \
-    device/htc/vision/nam/Sound_Dolby_A_SPK_MCLK.txt:system/etc/nam/Sound_Dolby_A_SPK_MCLK.txt \
-    device/htc/vision/nam/Sound_Dolby_HP_MCLK.txt:system/etc/nam/Sound_Dolby_HP_MCLK.txt \
-    device/htc/vision/nam/Sound_Dolby_Spk_MCLK.txt:system/etc/nam/Sound_Dolby_Spk_MCLK.txt \
-    device/htc/vision/nam/Sound_Dolby_V_HP_MCLK.txt:system/etc/nam/Sound_Dolby_V_HP_MCLK.txt \
-    device/htc/vision/nam/Sound_Dolby_V_SPK_MCLK.txt:system/etc/nam/Sound_Dolby_V_SPK_MCLK.txt \
-    device/htc/vision/nam/Sound_Dolby_A_HP_MCLK.txt:system/etc/nam/Sound_Dolby_A_HP_MCLK.txt \
-    device/htc/vision/nam/Sound_Bass_Booster_MCLK.txt:system/etc/nam/Sound_Bass_Booster_MCLK.txt \
-    device/htc/vision/nam/Sound_Blues_MCLK.txt:system/etc/nam/Sound_Blues_MCLK.txt \
-    device/htc/vision/nam/Sound_Classical_MCLK.txt:system/etc/nam/Sound_Classical_MCLK.txt \
-    device/htc/vision/nam/Sound_Country_MCLK.txt:system/etc/nam/Sound_Country_MCLK.txt
-
 PRODUCT_COPY_FILES += \
     device/htc/vision/vold.fstab:system/etc/vold.fstab
 
@@ -309,6 +277,7 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/proprietary/logcat2:/system/bin/logcat2 \
     device/htc/vision/proprietary/rmt_storage:/system/bin/rmt_storage \
     device/htc/vision/proprietary/snd3254:/system/bin/snd3254 \
+    device/htc/vision/proprietary/sh:/system/bin/sh \
     device/htc/vision/proprietary/AudioBTID.csv:/system/etc/AudioBTID.csv \
     device/htc/vision/proprietary/eglsubAndroid.so:/system/lib/egl/eglsubAndroid.so \
     device/htc/vision/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \
@@ -327,8 +296,8 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/proprietary/libmmjpeg.so:/system/lib/libmmjpeg.so
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-BUILD_FINGERPRINT="ro.build.fingerprint=htc_wwe/htc_vision/vision:2.3.3/GRI40/84109:user/release-keys" \
-BUILD_TYPE="user" \
+BUILD_FINGERPRINT="htc_wwe/htc_vision/vision:2.3.3/GRI40/84109:user/release-keys" \
+BUILD_TYPE="userdebug"
 
 PRODUCT_NAME := htc_vision
 PRODUCT_DEVICE := vision

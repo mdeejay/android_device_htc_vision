@@ -24,6 +24,7 @@ on fs
     chown dhcp dhcp /data/misc/dhcp
     mkdir /data/d 0777 system system
     mount debugfs /data/d /data/d
+    setprop softap.interface wl0.1
 
     chown system system /sys/module/serial/parameters/modem_enabled
     chown system system /dev/ttyHSUSB0
